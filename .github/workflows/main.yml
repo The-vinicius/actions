@@ -19,7 +19,7 @@ jobs:
           python-version: 3.8
         
       - name: Instala o poetry
-        uses: Gr1N/setup-poetry@v4
+        uses: Gr1N/setup-poetry@v7
 
       - name: Instala as dependências
         run: poetry install
