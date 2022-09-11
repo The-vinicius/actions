@@ -3,7 +3,8 @@ name: Deploy manual
 on: workflow_dispatch
   
 jobs:
-  test_quick:
+  deploy_app:
+    runs-on: ubuntu-latest
     steps:
       - name: Realizar o checkout
         uses: actions/checkout@v2
