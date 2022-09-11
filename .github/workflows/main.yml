@@ -1,0 +1,40 @@
+name: testa api
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+
+jobs:
+  test_quick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Realizar o checkout
+        uses: actions/checkout@v2
+
+      - name: Instala o python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+        
+      - name: Instala o poetry
+        uses: Gr1N/setup-poetry@v4
+
+      - name: Instala as dependências
+        run: poetry install
+
+      - name: Excuta o black
+        run: poetry run black --check app
+
+      - name: Excuta o isort
+        run: poetry run isort --check app
+
+      - name: Excuta o pydocstyle
+        run: poetry run pydocstyle app
+
+      - name: Excuta os testes unitários
+        run: poetry run pytest
+
+
+
