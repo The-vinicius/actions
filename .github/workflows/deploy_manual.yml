@@ -1,0 +1,17 @@
+name: Deploy manual
+
+on: workflow_dispatch
+  
+jobs:
+  test_quick:
+    steps:
+      - name: Realizar o checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy no heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_KEY}}
+          heroku_app_name: "app-calculadora-gh-actions"
+          heroku_email: "landcock84@gmail.com"
+
