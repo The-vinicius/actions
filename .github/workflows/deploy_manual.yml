@@ -10,7 +10,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy no heroku
-      - run: git pull
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_KEY}}
