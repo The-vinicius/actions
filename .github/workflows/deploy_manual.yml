@@ -15,4 +15,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_KEY}}
           heroku_app_name: "gol-soma-actions"
           heroku_email: "landcock84@gmail.com"
+          dontuseforce: true
+          dontautocreate: true
 
